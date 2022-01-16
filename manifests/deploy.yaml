@@ -17,8 +17,9 @@ spec:
       labels:
         app: valkon
     spec:
+      serviceAccount: valkon-sa
       containers:
-      - image: viveksinghggits/valkontroller:0.1.0
+      - image: viveksinghggits/valkontroller:0.1.8
         name: valkontroller
         args:
         - --tls-cert-file=/var/run/webhook/serving-cert/tls.crt
