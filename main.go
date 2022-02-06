@@ -19,6 +19,7 @@ import (
 	"k8s.io/apiserver/pkg/server/options"
 	"k8s.io/component-base/cli/globalflag"
 
+	"github.com/viveksinghggits/valkontroller/pkg/admission"
 	kdo "github.com/viveksinghggits/valkontroller/pkg/digitalocean"
 )
 
@@ -72,7 +73,8 @@ func main() {
 	c := options.Config()
 
 	mux := http.NewServeMux()
-	mux.Handle("/", http.HandlerFunc(ServeKlusterValidation))
+	mux.Handle("/validate/v1alpha1/kluster", http.HandlerFunc(ServeKlusterValidation))
+	mux.Handle("/mutate/v1alpha1/kluster", http.HandlerFunc(admission.ServeKlusterMutation))
 
 	stopCh := server.SetupSignalHandler()
 	ch, err := c.SecureServingInfo.Serve(mux, 30*time.Second, stopCh)

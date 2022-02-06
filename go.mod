@@ -5,6 +5,19 @@ go 1.17
 replace github.com/graymeta/stow => github.com/graymeta/stow v0.1.0
 
 require (
+	github.com/digitalocean/godo v1.73.0
+	github.com/mattbaird/jsonpatch v0.0.0-20200820163806-098863c1fc24
+	github.com/spf13/pflag v1.0.5
+	github.com/viveksinghggits/kluster v0.0.0-20211202205542-f0eb8884b64a
+	gomodules.xyz/jsonpatch/v2 v2.2.0
+	k8s.io/api v0.23.1
+	k8s.io/apimachinery v0.23.1
+	k8s.io/apiserver v0.23.1
+	k8s.io/client-go v0.23.1
+	k8s.io/component-base v0.23.1
+)
+
+require (
 	github.com/NYTimes/gziphandler v1.1.1 // indirect
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
@@ -14,7 +27,6 @@ require (
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.3.2 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/digitalocean/godo v1.73.0 // indirect
 	github.com/emicklei/go-restful v2.9.5+incompatible // indirect
 	github.com/evanphx/json-patch v4.12.0+incompatible // indirect
 	github.com/felixge/httpsnoop v1.0.1 // indirect
@@ -48,8 +60,6 @@ require (
 	github.com/prometheus/common v0.30.0 // indirect
 	github.com/prometheus/procfs v0.7.1 // indirect
 	github.com/spf13/cobra v1.2.1 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
-	github.com/viveksinghggits/kluster v0.0.0-20211202205542-f0eb8884b64a // indirect
 	go.etcd.io/etcd/api/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.0 // indirect
 	go.etcd.io/etcd/client/v3 v3.5.0 // indirect
@@ -83,11 +93,6 @@ require (
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
-	k8s.io/api v0.23.1 // indirect
-	k8s.io/apimachinery v0.23.1 // indirect
-	k8s.io/apiserver v0.23.1 // indirect
-	k8s.io/client-go v0.23.1 // indirect
-	k8s.io/component-base v0.23.1 // indirect
 	k8s.io/klog/v2 v2.30.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20211115234752-e816edb12b65 // indirect
 	k8s.io/utils v0.0.0-20210930125809-cb0fa318a74b // indirect

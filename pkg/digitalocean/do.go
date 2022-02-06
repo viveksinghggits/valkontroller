@@ -31,6 +31,22 @@ func ValidateKlusterVersion(spek klusterv1alpha1.KlusterSpec) (bool, error) {
 	return false, errors.New("The version is not supported")
 }
 
+// LatestKubeVersion gets latest kube version that DO supports
+// used to set in the kluster resource if version is not set
+func LatestKubeVersion(spek klusterv1alpha1.KlusterSpec) string {
+	client := initClient(spek.TokenSecret)
+	if client == nil {
+		fmt.Println("Error initing DO client")
+		return ""
+	}
+	options, _, err := client.Kubernetes.GetOptions(context.Background())
+	if err != nil {
+		fmt.Printf("Errro %s getting options using DO client\n", err.Error())
+		return ""
+	}
+	return options.Versions[0].Slug
+}
+
 func initClient(tokenSecret string) *godo.Client {
 	token, err := getToken(tokenSecret)
 	if err != nil {
