@@ -66,6 +66,20 @@ func ServeKlusterMutation(w http.ResponseWriter, r *http.Request) {
 	if newKluster.Spec.Version == "" {
 		newKluster.Spec.Version = do.LatestKubeVersion(newKluster.Spec)
 	}
+	// this is newKluster
+	// apiVersion: viveksingh.dev/v1alpha1
+	// kind: Kluster
+	// metadata:
+	// name: kluster-1
+	// spec:
+	// name: kluster-1
+	// region: "nyc1"
+	// version: "1.21.3-do.0"
+	// tokenSecret: "default/dosecret"
+	// nodePools:
+	// 	- count: 3
+	// 	name: "dummy-nodepool"
+	// 	size: "sizes-2vcpu-2gb"
 
 	jsonKluster, err := json.Marshal(newKluster)
 	if err != nil {
